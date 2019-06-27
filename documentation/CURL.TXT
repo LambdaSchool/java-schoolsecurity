@@ -1,0 +1,19 @@
+get token
+
+curl -X POST --user "lambda-client:lambda-secret" -d 'grant_type=password&username=admin&password=password' http://localhost:2019/oauth/token
+
+{"access_token":"48632185-13c9-4195-ab4c-128e5b2cc2e2","token_type":"bearer","expires_in":3041,"scope":"read write trust"}
+
+
+/courses
+
+curl -X GET -H 'Accept:application/json' -H 'Authorization:Bearer 08936f64-d0e0-4132-a48c-ec14b4780c86' http://localhost:2019/courses/courses
+
+
+
+"/studcount"
+
+curl -X GET -H 'Accept:application/json' -H 'Authorization:Bearer 08936f64-d0e0-4132-a48c-ec14b4780c86' http://localhost:2019/courses/studcount
+
+"/courses/{courseid}
+curl -X DELETE -H 'Accept:application/json' -H 'Authorization:Bearer 08936f64-d0e0-4132-a48c-ec14b4780c86' http://localhost:2019/courses/courses/1
